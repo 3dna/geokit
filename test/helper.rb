@@ -1,11 +1,40 @@
 # encoding: utf-8
 
+begin
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup
+rescue LoadError => e
+  puts "Error loading bundler (#{e.message}): \"gem install bundler\" for bundler support."
+end
+
+if ENV['COVERAGE']
+  COVERAGE_THRESHOLD = 84
+  require 'simplecov'
+  require 'simplecov-rcov'
+  require 'coveralls'
+  Coveralls.wear!
+
+  SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+  SimpleCov.start do
+    add_filter '/test/'
+    add_group 'lib', 'lib'
+  end
+  SimpleCov.at_exit do
+    SimpleCov.result.format!
+    percent = SimpleCov.result.covered_percent
+    unless percent >= COVERAGE_THRESHOLD
+      puts "Coverage must be above #{COVERAGE_THRESHOLD}%. It is #{"%.2f" % percent}%"
+      Kernel.exit(1)
+    end
+  end
+end
+
 require 'test/unit'
-require 'mocha'
+require 'mocha/setup'
 require 'net/http'
 
 require File.join(File.dirname(__FILE__), "../lib/geokit.rb")
-
 
 class MockSuccess < Net::HTTPSuccess #:nodoc: all
   def initialize
