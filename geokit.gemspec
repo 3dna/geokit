@@ -12,19 +12,63 @@ Gem::Specification.new do |s|
   s.date = "2013-08-07"
   s.description = "Geokit gem provides geocoding and distance/heading calculations"
   s.email = "david@nationbuilder.com"
+  s.extensions = ["ext/mkrf_conf.rb"]
   s.extra_rdoc_files = [
+    "LICENSE",
     "LICENSE.txt",
+    "README.markdown",
     "README.rdoc"
   ]
   s.files = [
     ".document",
     ".rspec",
+    ".travis.yml",
+    "CHANGELOG.md",
     "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
     "LICENSE.txt",
+    "Manifest.txt",
+    "README.markdown",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/geokit.rb"
+    "ext/mkrf_conf.rb",
+    "geokit.gemspec",
+    "lib/geokit.rb",
+    "lib/geokit/geocoders.rb",
+    "lib/geokit/inflectors.rb",
+    "lib/geokit/mappable.rb",
+    "lib/geokit/multi_geocoder.rb",
+    "lib/geokit/services/ca_geocoder.rb",
+    "lib/geokit/services/fcc.rb",
+    "lib/geokit/services/geo_plugin.rb",
+    "lib/geokit/services/geonames.rb",
+    "lib/geokit/services/google.rb",
+    "lib/geokit/services/google3.rb",
+    "lib/geokit/services/ip.rb",
+    "lib/geokit/services/openstreetmap.rb",
+    "lib/geokit/services/us_geocoder.rb",
+    "lib/geokit/services/yahoo.rb",
+    "lib/geokit/version.rb",
+    "test/helper.rb",
+    "test/test_base_geocoder.rb",
+    "test/test_bounds.rb",
+    "test/test_ca_geocoder.rb",
+    "test/test_geoloc.rb",
+    "test/test_geoplugin_geocoder.rb",
+    "test/test_google_geocoder.rb",
+    "test/test_google_geocoder3.rb",
+    "test/test_google_reverse_geocoder.rb",
+    "test/test_inflector.rb",
+    "test/test_ipgeocoder.rb",
+    "test/test_latlng.rb",
+    "test/test_multi_geocoder.rb",
+    "test/test_multi_ip_geocoder.rb",
+    "test/test_openstreetmap_geocoder.rb",
+    "test/test_polygon_contains.rb",
+    "test/test_us_geocoder.rb",
+    "test/test_yahoo_geocoder.rb"
   ]
   s.homepage = "http://github.com/3dna/geokit"
   s.licenses = ["MIT"]
