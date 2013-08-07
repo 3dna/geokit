@@ -15,28 +15,31 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "geokit"
-  gem.homepage = "http://github.com/davidhuie/geokit"
+  gem.homepage = "http://github.com/3dna/geokit"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Geokit gem provides geocoding and distance/heading calculations}
+  gem.description = %Q{Geokit gem provides geocoding and distance/heading calculations}
   gem.email = "david@nationbuilder.com"
   gem.authors = ["David Huie"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rspec/core'
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/test*.rb']
+  t.verbose = true
 end
 
-RSpec::Core::RakeTask.new(:rcov) do |spec|
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
+desc "Generate SimpleCov test coverage and open in your browser"
+task :coverage do
+  ENV['COVERAGE'] = 'true'
+  Rake::Task['test'].invoke
 end
 
-task :default => :spec
+task :default => :test
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
