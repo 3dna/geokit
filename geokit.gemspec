@@ -85,9 +85,9 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<multi_json>, [">= 1.3.2"])
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<rake>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, [">= 0"])
-      s.add_development_dependency(%q<simplecov-rcov>, [">= 0"])
+      s.add_runtime_dependency(%q<rspec>, [">= 0"])
+      s.add_runtime_dependency(%q<bundler>, [">= 0"])
+      s.add_runtime_dependency(%q<simplecov-rcov>, [">= 0"])
     else
       s.add_dependency(%q<coveralls>, [">= 0"])
       s.add_dependency(%q<mocha>, [">= 0"])
