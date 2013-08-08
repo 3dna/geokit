@@ -86,7 +86,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<rake>, [">= 0"])
       s.add_runtime_dependency(%q<rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<bundler>, [">= 0"])
       s.add_runtime_dependency(%q<simplecov-rcov>, [">= 0"])
     else
       s.add_dependency(%q<coveralls>, [">= 0"])
@@ -95,7 +94,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<simplecov-rcov>, [">= 0"])
     end
   else
@@ -105,7 +103,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<simplecov-rcov>, [">= 0"])
   end
 end
